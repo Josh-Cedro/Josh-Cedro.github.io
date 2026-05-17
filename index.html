@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JC FLICKZ | VISUALS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="logo">JC.FLICKZ</a>
+        <div class="nav-links">
+            <a href="#work">WORK</a>
+            <a href="#sports">SPORTS</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact" class="nav-cta">BOOK ME</a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#work"    onclick="toggleMenu()">WORK</a>
+        <a href="#sports"  onclick="toggleMenu()">SPORTS</a>
+        <a href="#about"   onclick="toggleMenu()">ABOUT</a>
+        <a href="#contact" onclick="toggleMenu()">BOOK ME</a>
+    </div>
+
+    <!-- HERO -->
+    <div id="main-sequence">
+        <section class="panel hero-panel">
+            <div class="hero-content">
+                <div class="text-wrap left-t"><h1>YOU<br>KNOW</h1></div>
+
+                <div class="video-window">
+                    <!--
+                    ══════════════════════════════════════════
+                    HERO MEDIA — pick ONE option below:
+
+                    OPTION A: Video (recommended)
+                      1. Upload your .mp4 file to GitHub
+                      2. Replace "your-video.mp4" with your filename
+
+                    OPTION B: Still photo
+                      1. Delete the entire <video>...</video> block
+                      2. Un-comment the <img> line below it
+                      3. Replace "hero-photo.jpg" with your filename
+                    ══════════════════════════════════════════
+                    -->
+                    <video autoplay muted loop playsinline>
+                        <source src="your-video.mp4" type="video/mp4">
+                    </video>
+                    <!-- <img src="hero-photo.jpg" alt="JC Flickz"> -->
+                </div>
+
+                <div class="text-wrap right-t"><h1>WHO<br>SHOT IT</h1></div>
+            </div>
+            <div class="hero-sub">SCROLL</div>
+        </section>
+
+        <section class="panel desc-panel" id="about">
+            <div class="desc-content">
+                <div class="desc-label">ABOUT</div>
+                <div class="desc-body">
+                    <p>Seattle, WA. Photography &amp; Videography. Creative content for <strong>@seattleu</strong> &amp; co-partner of <strong>@sc.creative.visuals</strong>. Covering basketball, baseball, soccer, volleyball, football &amp; more — DM to book.</p>
+                    <a href="#contact" class="btn-outline">BOOK A SESSION</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- WORK GRID -->
+    <section class="work-section" id="work">
+        <div class="section-header">
+            <div>
+                <span class="section-label">SELECTED WORK</span>
+                <h2>THE ARCHIVE</h2>
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+            <!--
+            ══════════════════════════════════════════
+            HOW TO ADD YOUR PHOTOS:
+              1. Upload photo files to your GitHub repo (same folder as index.html).
+              2. Replace "photo1.jpg" etc. with your actual filenames.
+              3. Change the sport label in <div class="item-overlay"><span>LABEL</span></div>.
+
+            LAYOUT CLASSES (add to the outer <div class="item ...">):
+              class="item"        — standard square tile
+              class="item tall"   — tall tile, spans 2 rows  (portrait shots)
+              class="item wide"   — wide tile, spans 2 columns (landscape shots)
+
+            TO ADD MORE PHOTOS: copy any block below and paste it before the closing </div>
+            ══════════════════════════════════════════
+            -->
+
+            <div class="item tall">
+                <img src="photo1.jpg" alt="Basketball">
+                <div class="item-overlay"><span>BASKETBALL</span></div>
+            </div>
+            <div class="item">
+                <img src="photo2.jpg" alt="Baseball">
+                <div class="item-overlay"><span>BASEBALL</span></div>
+            </div>
+            <div class="item wide">
+                <img src="photo3.jpg" alt="Action">
+                <div class="item-overlay"><span>ACTION</span></div>
+            </div>
+            <div class="item">
+                <img src="photo4.jpg" alt="Soccer">
+                <div class="item-overlay"><span>SOCCER</span></div>
+            </div>
+            <div class="item tall">
+                <img src="photo5.jpg" alt="Football">
+                <div class="item-overlay"><span>FOOTBALL</span></div>
+            </div>
+            <div class="item">
+                <img src="photo6.jpg" alt="Volleyball">
+                <div class="item-overlay"><span>VOLLEYBALL</span></div>
+            </div>
+
+            <!-- PASTE ADDITIONAL PHOTOS BELOW THIS LINE -->
+
+        </div>
+    </section>
+
+    <!-- SPORTS CATEGORIES -->
+    <section class="clients-section" id="sports">
+        <div class="section-header">
+            <div>
+                <span class="section-label">COVERAGE</span>
+                <h2>SPORTS</h2>
+            </div>
+        </div>
+        <div class="clients-grid">
+            <div class="client-item">BASKETBALL 🏀</div>
+            <div class="client-item">BASEBALL ⚾</div>
+            <div class="client-item">SOCCER ⚽</div>
+            <div class="client-item">VOLLEYBALL 🏐</div>
+            <div class="client-item">FOOTBALL 🏈</div>
+            <div class="client-item">+ MORE</div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+        <div class="section-header">
+            <div>
+                <span class="section-label">WHAT I DO</span>
+                <h2>SERVICES</h2>
+            </div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <h3>SPORTS COVERAGE</h3>
+                <p>Game day. Practice. The moments between. Professional photo &amp; video coverage for teams, athletes, and organizations at every level.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <h3>CREATIVE CONTENT</h3>
+                <p>High-quality photo and video assets built for social media, press, and digital campaigns. Currently creating for Seattle University.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <h3>ATHLETE BRANDING</h3>
+                <p>Building personal brands for athletes — NIL opportunities, college recruitment packages, and social media strategy all covered.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">04</div>
+                <h3>VIDEOGRAPHY</h3>
+                <p>Highlight reels, event coverage, and cinematic short-form video. Edited and delivered ready to post.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="section-label">LET'S CREATE</span>
+                <h2>BOOK<br>YOUR<br>SHOOT.</h2>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:Jacballer2007@gmail.com" class="footer-email">Jacballer2007@gmail.com</a>
+                <a href="tel:4083387137" class="footer-phone">(408) 338-7137</a>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/jc_flickz/" target="_blank">@JC_FLICKZ</a>
+                    <a href="https://linktr.ee/Joshua_Cedro" target="_blank">LINKTREE</a>
+                </div>
+                <div class="footer-pricing">
+                    <p>PRICING OPTIONS</p>
+                    <ul>
+                        <li>Individual image downloads</li>
+                        <li>Hourly rate</li>
+                        <li>Day rate</li>
+                        <li>Monthly retainer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="logo-footer">JC.FLICKZ</span>
+            <span>&copy; 2025. ALL RIGHTS RESERVED.</span>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });
+
+        gsap.set(".video-window", { width: "450px", height: "80px" });
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#main-sequence",
+                start: "top top",
+                end: "+=250%",
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                onRefresh: self => self.scroll(self.start)
+            }
+        });
+
+        tl.to(".left-t",  { xPercent: -150, opacity: 0 }, 0)
+          .to(".right-t", { xPercent: 150,  opacity: 0 }, 0)
+          .to(".video-window", {
+              width: "100vw",
+              height: "56.25vw",
+              margin: "0",
+              duration: 2,
+              ease: "power2.inOut"
+          }, 0)
+          .to(".hero-panel", { yPercent: -100, duration: 1 });
+
+        gsap.utils.toArray(".service-card").forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: "top 85%" },
+                y: 40, opacity: 0, duration: 0.7, delay: i * 0.1, ease: "power2.out"
+            });
+        });
+
+        gsap.utils.toArray(".item").forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: { trigger: item, start: "top 90%" },
+                y: 30, opacity: 0, duration: 0.6, delay: i * 0.07, ease: "power2.out"
+            });
+        });
+
+        gsap.utils.toArray(".client-item").forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: { trigger: item, start: "top 90%" },
+                opacity: 0, duration: 0.5, delay: i * 0.08
+            });
+        });
+
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
