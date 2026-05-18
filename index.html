@@ -34,47 +34,45 @@
     </div>
 
     <!-- HERO -->
-    <div id="main-sequence">
-        <section class="panel hero-panel">
-            <div class="hero-content">
-                <div class="text-wrap left-t"><h1>YOU<br>KNOW</h1></div>
+    <section class="hero-panel">
+        <div class="hero-content">
+            <div class="text-wrap left-t"><h1>CAPTUR<br>ING</h1></div>
 
-                <div class="video-window">
-                    <!--
-                    ══════════════════════════════════════════
-                    HERO MEDIA — pick ONE option below:
+            <div class="video-window">
+                <!--
+                ══════════════════════════════════════════
+                HERO MEDIA — pick ONE option:
 
-                    OPTION A: Video (recommended)
-                      1. Upload your .mp4 file to GitHub
-                      2. Replace "your-video.mp4" with your filename
+                OPTION A: Video
+                  Replace "your-video.mp4" with your filename
+                  and upload that file to GitHub.
 
-                    OPTION B: Still photo
-                      1. Delete the entire <video>...</video> block
-                      2. Un-comment the <img> line below it
-                      3. Replace "hero-photo.jpg" with your filename
-                    ══════════════════════════════════════════
-                    -->
-                    <video autoplay muted loop playsinline>
-                        <source src="your-video.mp4" type="video/mp4">
-                    </video>
-                    <!-- <img src="hero-photo.jpg" alt="JC Flickz"> -->
-                </div>
-
-                <div class="text-wrap right-t"><h1>WHO<br>SHOT IT</h1></div>
+                OPTION B: Still photo
+                  Delete the <video> block below and
+                  un-comment the <img> line.
+                ══════════════════════════════════════════
+                -->
+                <video autoplay muted loop playsinline>
+                    <source src="your-video.mp4" type="video/mp4">
+                </video>
+                <!-- <img src="hero-photo.jpg" alt="JC Flickz"> -->
             </div>
-            <div class="hero-sub">SCROLL</div>
-        </section>
 
-        <section class="panel desc-panel" id="about">
-            <div class="desc-content">
-                <div class="desc-label">ABOUT</div>
-                <div class="desc-body">
-                    <p>Seattle, WA. Photography &amp; Videography. Creative content for <strong>@seattleu</strong> &amp; co-partner of <strong>@sc.creative.visuals</strong>. Covering basketball, baseball, soccer, volleyball, football &amp; more — DM to book.</p>
-                    <a href="#contact" class="btn-outline">BOOK A SESSION</a>
-                </div>
+            <div class="text-wrap right-t"><h1>THE<br>MOMENT</h1></div>
+        </div>
+        <div class="hero-sub">SCROLL</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="desc-section" id="about">
+        <div class="desc-content">
+            <div class="desc-label">ABOUT</div>
+            <div class="desc-body">
+                <p>Seattle, WA. Photography &amp; Videography. Creative content for <strong>@seattleu</strong> &amp; co-partner of <strong>@sc.creative.visuals</strong>. Covering basketball, baseball, soccer, volleyball, football &amp; more — DM to book.</p>
+                <a href="#contact" class="btn-outline">BOOK A SESSION</a>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <!-- WORK GRID -->
     <section class="work-section" id="work">
@@ -89,16 +87,16 @@
             <!--
             ══════════════════════════════════════════
             HOW TO ADD YOUR PHOTOS:
-              1. Upload photo files to your GitHub repo (same folder as index.html).
-              2. Replace "photo1.jpg" etc. with your actual filenames.
-              3. Change the sport label in <div class="item-overlay"><span>LABEL</span></div>.
+              1. Upload photo files to your GitHub repo.
+              2. Replace "photo1.jpg" etc. with your filenames.
+              3. Change the sport label inside <span>LABEL</span>.
 
-            LAYOUT CLASSES (add to the outer <div class="item ...">):
-              class="item"        — standard square tile
-              class="item tall"   — tall tile, spans 2 rows  (portrait shots)
-              class="item wide"   — wide tile, spans 2 columns (landscape shots)
+            LAYOUT CLASSES:
+              class="item"       — standard tile
+              class="item tall"  — tall, spans 2 rows  (portrait shots)
+              class="item wide"  — wide, spans 2 columns (landscape shots)
 
-            TO ADD MORE PHOTOS: copy any block below and paste it before the closing </div>
+            TO ADD MORE: copy any block and paste before the closing comment.
             ══════════════════════════════════════════
             -->
 
@@ -215,40 +213,8 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.config({ ignoreMobileResize: true });
 
-        gsap.set(".video-window", { width: "450px", height: "80px" });
-
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#main-sequence",
-                start: "top top",
-                end: "+=250%",
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1,
-                onRefresh: self => self.scroll(self.start)
-            }
-        });
-
-        tl.to(".left-t",  { xPercent: -150, opacity: 0 }, 0)
-          .to(".right-t", { xPercent: 150,  opacity: 0 }, 0)
-          .to(".video-window", {
-              width: "100vw",
-              height: "56.25vw",
-              margin: "0",
-              duration: 2,
-              ease: "power2.inOut"
-          }, 0)
-          .to(".hero-panel", { yPercent: -100, duration: 1 });
-
-        gsap.utils.toArray(".service-card").forEach((card, i) => {
-            gsap.from(card, {
-                scrollTrigger: { trigger: card, start: "top 85%" },
-                y: 40, opacity: 0, duration: 0.7, delay: i * 0.1, ease: "power2.out"
-            });
-        });
-
+        // Scroll-reveal for gallery items
         gsap.utils.toArray(".item").forEach((item, i) => {
             gsap.from(item, {
                 scrollTrigger: { trigger: item, start: "top 90%" },
@@ -256,6 +222,15 @@
             });
         });
 
+        // Scroll-reveal for service cards
+        gsap.utils.toArray(".service-card").forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: "top 85%" },
+                y: 40, opacity: 0, duration: 0.7, delay: i * 0.1, ease: "power2.out"
+            });
+        });
+
+        // Scroll-reveal for sports grid
         gsap.utils.toArray(".client-item").forEach((item, i) => {
             gsap.from(item, {
                 scrollTrigger: { trigger: item, start: "top 90%" },
